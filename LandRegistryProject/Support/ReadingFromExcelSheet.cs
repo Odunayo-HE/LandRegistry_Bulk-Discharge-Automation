@@ -32,12 +32,13 @@ namespace LandRegistryProject.Support
         {
             //File Path To BorrowBox_DS1File Path Location
             //ConnectToSharePointOnline();
-            excelFilePath = projDir.Parent.Parent.Parent.FullName + @"\TestDatas\TittleNumer.xlsx";
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            excelFilePath = projDir.Parent.Parent.Parent.FullName + @"\TestDatas\TitleNumber.xlsx";
             //excelFilePath = (Config.BorrowBox_DS1File_Path_Location);
 
             var newFile = new FileInfo(excelFilePath);
             pck = new OfficeOpenXml.ExcelPackage(newFile);
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            
             sheet = pck.Workbook.Worksheets[0];
 
             var sb = new StringBuilder();
@@ -99,7 +100,7 @@ namespace LandRegistryProject.Support
         public void WriteDataToExcelSpreadSheet(int row, int col, string value)
         {
             //File Path To BorrowBox_DS1File Path Location
-            excelFilePath = projDir.Parent.Parent.Parent.FullName + @"\TestDatas\TittleNumer.xlsx";
+            excelFilePath = projDir.Parent.Parent.Parent.FullName + @"\TestDatas\TitleNumber.xlsx";
             //excelFilePath = (Config.BorrowBox_DS1File_Path_Location);
 
             //var ValueToUpdate = value.Length > 20 ? GetSubString(value) : value;
